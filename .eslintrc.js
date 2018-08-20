@@ -2,9 +2,9 @@ module.exports = {
     env: {
         browser: true,
     },
+    parser: "babel-eslint",
     parserOptions: {
-        parser: "babel-eslint",
-        ecmaVersion: 2017,
+        ecmaVersion: 2018,
         sourceType: "module",
         ecmaFeatures: {
             jsx: true
@@ -20,6 +20,7 @@ module.exports = {
         'no-new': 0,
         "react/jsx-indent": ["error", 4],
         "indent": ["error", 4],
-        "max-len": 0
+        "max-len": 0,
+        "no-console": 1,
     },
 };
