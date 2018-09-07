@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const common = require('./webpack.common');
 
@@ -21,4 +22,15 @@ module.exports = {
             yandexMetrika: true,
         }),
     ],
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    compress: {
+                        drop_console: true,
+                    }
+                }
+            })
+        ]
+    },
 };
