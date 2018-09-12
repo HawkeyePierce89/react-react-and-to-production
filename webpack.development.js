@@ -1,10 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const common = require('./webpack.common');
-
 module.exports = {
-    ...common,
     devServer: {
         contentBase: path.join(__dirname, 'build'),
         publicPath: '/',

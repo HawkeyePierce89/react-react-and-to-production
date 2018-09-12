@@ -16,6 +16,18 @@ module.exports = {
         "jsx-a11y",
         "import",
     ],
+    settings: {
+        'import/resolver': {
+            alias: {
+                map: [
+                    ['Actions', './src/actions/'],
+                    ['Components', './src/components/'],
+                    ['Constants', './src/constants/'],
+                    ['Helpers', './src/helpers/'],
+                ],
+            }
+        }
+    },
     rules: {
         'no-new': 0,
         "indent": ["error", 4, { "SwitchCase": 1 }],
