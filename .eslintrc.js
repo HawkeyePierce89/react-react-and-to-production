@@ -17,16 +17,7 @@ module.exports = {
         "import",
     ],
     settings: {
-        'import/resolver': {
-            alias: {
-                map: [
-                    ['Actions', './src/actions/'],
-                    ['Components', './src/components/'],
-                    ['Constants', './src/constants/'],
-                    ['Helpers', './src/helpers/'],
-                ],
-            }
-        }
+        'import/resolver': 'webpack'
     },
     rules: {
         'no-new': 0,
@@ -35,6 +26,7 @@ module.exports = {
         "no-console": 1,
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": [2, 4],
+        "react/jsx-one-expression-per-line": 0,
         // temporary disable
         "jsx-a11y/anchor-is-valid": 0,
         "jsx-a11y/click-events-have-key-events": 0,
