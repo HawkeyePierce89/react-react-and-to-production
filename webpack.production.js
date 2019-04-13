@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     output: {
@@ -20,14 +20,13 @@ module.exports = {
         }),
     ],
     optimization: {
-        minimizer: [
-            new UglifyJsPlugin({
-                uglifyOptions: {
-                    compress: {
-                        drop_console: true,
-                    }
-                }
-            })
-        ]
+        minimizer: [ new TerserPlugin({
+            sourceMap: true,
+            terserOptions: {
+                compress: {
+                    pure_funcs: ['console.log'],
+                },
+            }
+        })]
     },
 };
