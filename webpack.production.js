@@ -11,7 +11,7 @@ module.exports = {
         chunkFilename: '[id].[chunkhash].js',
     },
     plugins: [
-        new CleanWebpackPlugin(['build']),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             inject: 'body',
             template: 'src/index.html',

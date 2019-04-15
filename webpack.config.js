@@ -7,14 +7,15 @@ const settings = {
 
 module.exports = (env, {mode}) => {
     return {
+        mode,
         entry: path.join(__dirname, './src/main.js'),
         module: {
-            rules: [{
+            rules: [mode === 'production' ? {
                 enforce: 'pre',
                 test: /\.(js|jsx)$/,
                 loader: 'eslint-loader',
                 exclude: /node_modules/,
-            }, {
+            } : {}, {
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
