@@ -5,12 +5,14 @@ const settings = {
     production: require('./webpack.production'),
 };
 
-module.exports = (env, {mode}) => {
+module.exports = (env, config) => {
+    config = config || {mode : 'development'};
+
     return {
-        mode,
+        mode: config,
         entry: path.join(__dirname, './src/main.js'),
         module: {
-            rules: [mode === 'production' ? {
+            rules: [config.mode === 'production' ? {
                 enforce: 'pre',
                 test: /\.(js|jsx)$/,
                 loader: 'eslint-loader',
@@ -39,6 +41,6 @@ module.exports = (env, {mode}) => {
                 "~helpers": path.resolve(__dirname, 'src/helpers/'),
             },
         },
-        ...settings[mode],
+        ...settings[config.mode],
     }
 };
