@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --color --mode=development",
+    "dev": "webpack-dashboard -- webpack-dev-server --mode=development",
     "build": "webpack --mode=production"
   },
   "devDependencies": {
@@ -33,6 +33,7 @@
     "terser-webpack-plugin": "^2.1.2",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
+    "webpack-dashboard": "^3.2.0",
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
