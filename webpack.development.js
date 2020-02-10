@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DashboardPlugin = require("webpack-dashboard/plugin");
 
 module.exports = {
     devServer: {
@@ -10,7 +9,6 @@ module.exports = {
         historyApiFallback: true,
     },
     plugins: [
-        new DashboardPlugin(),
         new HtmlWebpackPlugin({
             inject: "body",
             title: 'Title',
