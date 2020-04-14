@@ -10,7 +10,7 @@ module.exports = (env, config) => {
 
     return {
         mode: config,
-        entry: path.join(__dirname, './src/main.js'),
+        entry: path.join(__dirname, './src/index.js'),
         module: {
             rules: [config.mode === 'production' ? {
                 enforce: 'pre',
