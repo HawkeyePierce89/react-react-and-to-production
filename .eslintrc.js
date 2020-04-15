@@ -34,4 +34,16 @@ module.exports = {
         "jsx-a11y/label-has-for": 0,
         "jsx-a11y/label-has-associated-control": 0,
     },
+    "overrides": [
+        {
+            "files": [
+                "**/actions.js",
+                "**/constants.js",
+                "**/selectors.js"
+            ],
+            "rules": {
+                "import/prefer-default-export": 0,
+            }
+        }
+    ]
 };
