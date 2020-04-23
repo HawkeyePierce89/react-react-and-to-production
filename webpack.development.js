@@ -4,9 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'build'),
-        publicPath: '/',
-        filename: 'build.js',
         historyApiFallback: true,
+    },
+    output: {
+        publicPath: '/',
+        filename: 'main.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
