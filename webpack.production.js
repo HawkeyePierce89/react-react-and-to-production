@@ -21,7 +21,6 @@ module.exports = {
     ],
     optimization: {
         minimizer: [ new TerserPlugin({
-            sourceMap: true,
             terserOptions: {
                 compress: {
                     pure_funcs: ['console.log'],

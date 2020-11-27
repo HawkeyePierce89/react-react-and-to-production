@@ -23,10 +23,10 @@ module.exports = (env, config) => {
                 exclude: /node_modules/,
             }, {
                 test: /\.less/,
-                loader: 'style-loader!css-loader!postcss-loader!less-loader',
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
             }, {
                 test: /\.css/,
-                loader: 'style-loader!css-loader!postcss-loader',
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
             }],
         },
         resolve: {
