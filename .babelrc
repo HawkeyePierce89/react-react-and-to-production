@@ -1,13 +1,7 @@
 {
   "presets": [
-    ["@babel/preset-env", {
-      "exclude": ["transform-async-to-generator", "transform-regenerator"]
-    }],
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    ["module:fast-async", { "spec": true }],
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-proposal-class-properties"
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ]
 }

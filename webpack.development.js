@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devServer: {
-        contentBase: path.join(__dirname, 'build'),
+        static: path.join(__dirname, 'build'),
         historyApiFallback: true,
     },
     output: {
