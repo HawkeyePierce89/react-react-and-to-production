@@ -10,15 +10,10 @@ module.exports = (env, config) => {
 
     return {
         mode: config,
-        entry: path.join(__dirname, './src/index.js'),
+        entry: path.join(__dirname, './src/index.tsx'),
         module: {
-            rules: [config.mode === 'production' ? {
-                enforce: 'pre',
-                test: /\.(js|jsx)$/,
-                loader: 'eslint-loader',
-                exclude: /node_modules/,
-            } : {}, {
-                test: /\.(js|jsx)$/,
+            rules: [{
+                test: /\.(js|ts|tsx)$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
             }, {
@@ -30,15 +25,12 @@ module.exports = (env, config) => {
             }],
         },
         resolve: {
-            extensions: ['*', '.js', '.jsx'],
+            extensions: ['.ts', '.tsx', '.js'],
             modules: [
                 path.resolve('./node_modules'),
             ],
             alias: {
-                "~actions": path.resolve(__dirname, 'src/actions/'),
-                "~components": path.resolve(__dirname, 'src/components/'),
-                "~constants": path.resolve(__dirname, 'src/constants/'),
-                "~helpers": path.resolve(__dirname, 'src/helpers/'),
+                "~": path.resolve(__dirname, 'src'),
             },
         },
         ...settings[config.mode],
